@@ -5,9 +5,9 @@ require 'fileutils'
 # 38;P.K. Subban;Canadiens;MTL;D;42;11;27;38;33;54;87;2875000;2
 
 def go
-  File.open(File.expand_path('goalers_from_2014_2015.csv')) do |file|
+  File.open(File.expand_path('2016_2017_nhl.csv')) do |file|
     file.each_line do |line|
-      l = line.split(';')
+      l = line.split(';') #attention a la virgule entre les teams MTL,SJS
       p = Player.new
 
       p.nhl_rank = l[0]
